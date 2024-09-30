@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: microsvc-pyth-app
+  name: microsvc-pyth-app
+  namespace: staging
+spec:
+  ports:
+  - port: 5000
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    app: microsvc-pyth-app 
+  type: NodePort
